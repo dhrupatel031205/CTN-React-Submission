@@ -109,6 +109,91 @@ The application includes comprehensive error handling:
 - Network and unexpected errors
 - User-friendly error messages
 
+## Deployment
+
+### Vercel Deployment
+
+This project is configured for easy deployment to Vercel. Follow these steps:
+
+#### Prerequisites
+- A Vercel account (sign up at [vercel.com](https://vercel.com))
+- GitHub, GitLab, or Bitbucket account (for automatic deployments)
+- Your project pushed to a Git repository
+
+#### Deployment Steps
+
+1. **Push your code to a Git repository**
+   ```bash
+   git add .
+   git commit -m "Ready for Vercel deployment"
+   git push origin main
+   ```
+
+2. **Deploy via Vercel Dashboard**
+   - Log in to your Vercel account
+   - Click "Add New..." → "Project"
+   - Import your Git repository
+   - Vercel will automatically detect the settings from `vercel.json`
+   - Click "Deploy"
+
+3. **Deploy via Vercel CLI (Alternative)**
+   ```bash
+   # Install Vercel CLI
+   npm i -g vercel
+   
+   # Login to Vercel
+   vercel login
+   
+   # Deploy from project root
+   vercel
+   ```
+
+#### Deployment Configuration
+
+The project includes a `vercel.json` file with optimal settings:
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Framework**: Vite
+- **Rewrites**: All routes redirect to `index.html` for SPA functionality
+
+#### Environment Variables (if needed)
+
+If your application requires environment variables:
+1. Go to your Vercel project dashboard
+2. Navigate to "Settings" → "Environment Variables"
+3. Add your variables (e.g., `API_URL`, `NODE_ENV`)
+
+#### Automatic Deployments
+
+Once connected to Git, Vercel will automatically:
+- Deploy on every push to your main branch
+- Create preview URLs for pull requests
+- Roll back to previous deployments if needed
+
+#### Custom Domain (Optional)
+
+1. Go to your Vercel project dashboard
+2. Navigate to "Settings" → "Domains"
+3. Add your custom domain
+4. Follow the DNS configuration instructions
+
+#### Troubleshooting
+
+If deployment fails:
+1. Check the build logs in Vercel dashboard
+2. Ensure all dependencies are in `package.json`
+3. Verify the build command works locally: `npm run build`
+4. Check that `vercel.json` configuration is correct
+
+#### Production Optimizations
+
+The Vercel deployment includes:
+- Automatic code splitting
+- Asset optimization
+- CDN distribution
+- HTTPS by default
+- Global edge network
+
 ## Future Enhancements
 
 - Password strength validation
