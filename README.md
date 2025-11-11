@@ -151,10 +151,12 @@ This project is configured for easy deployment to Vercel. Follow these steps:
 #### Deployment Configuration
 
 The project includes a `vercel.json` file with optimal settings:
-- **Build Command**: `npm run build`
+- **Build Command**: `npm run build:vercel` (uses Vite build directly to avoid TypeScript permission issues)
 - **Output Directory**: `dist`
 - **Framework**: Vite
 - **Rewrites**: All routes redirect to `index.html` for SPA functionality
+
+**Note**: The build uses `npm run build:vercel` which runs `vite build` directly to avoid TypeScript compiler permission issues that can occur in Vercel's environment.
 
 #### Environment Variables (if needed)
 

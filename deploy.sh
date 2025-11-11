@@ -18,7 +18,7 @@ fi
 
 # Build the project to ensure everything works
 echo "🔨 Building project..."
-npm run build
+npm run build:vercel
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful!"
