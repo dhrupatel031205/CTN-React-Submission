@@ -42,7 +42,6 @@ src/
 1. Clone the repository:
 ```bash
 git clone https://github.com/dhrupatel031205/CTN-React-Submission.git
-cd react-account-manager
 ```
 
 2. Install dependencies:
