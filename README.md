@@ -41,7 +41,7 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/dhrupatel031205/CTN-React-Submission.git
 cd react-account-manager
 ```
 
@@ -119,22 +119,3 @@ The application includes comprehensive error handling:
 - Backend API integration
 - JWT authentication
 - Role-based access control
-
-## Browser Compatibility
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
