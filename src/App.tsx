@@ -12,6 +12,11 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return user ? <>{children}</> : <Navigate to="/login" />;
 };
 
+const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user } = useAuth();
+  return !user ? <>{children}</> : <Navigate to="/profile" />;
+};
+
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="d-flex flex-column min-vh-100" style={{ 
@@ -28,20 +33,29 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
+const DefaultRoute: React.FC = () => {
+  const { user } = useAuth();
+  return user ? <Navigate to="/profile" /> : <Navigate to="/login" />;
+};
+
 const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
           <Routes>
             <Route path="/login" element={
-              <MainLayout>
-                <Login />
-              </MainLayout>
+              <PublicRoute>
+                <MainLayout>
+                  <Login />
+                </MainLayout>
+              </PublicRoute>
             } />
             <Route path="/register" element={
-              <MainLayout>
-                <Register />
-              </MainLayout>
+              <PublicRoute>
+                <MainLayout>
+                  <Register />
+                </MainLayout>
+              </PublicRoute>
             } />
             <Route path="/profile" element={
               <ProtectedRoute>
@@ -50,7 +64,7 @@ const App: React.FC = () => {
                 </MainLayout>
               </ProtectedRoute>
             } />
-            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/" element={<DefaultRoute />} />
           </Routes>
         </Router>
       </AuthProvider>

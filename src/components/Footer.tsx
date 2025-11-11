@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       <div className="container-fluid">
         <p className="mb-0">
           © 2024 User Management System. All rights reserved. | 
-          <span className="ms-2">Developed with ❤️ by DHRUV PATEL</span>
+          <span className="ms-2">Developed with ❤️ by <a href="https://drive.google.com/file/d/15am66S86JvXfjWxpPGRCWZIv_sd5er2b/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'underline' }}>DHRUV PATEL</a></span>
         </p>
       </div>
     </footer>
